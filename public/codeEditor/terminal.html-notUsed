@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html> 
+  <head>
+    <meta charset="utf-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <title>Terminal &sdot; Neutron IDE</title>
+    <link rel="shortcut icon" href="img/terminal.png">
+    
+    <link href='css/kendo_styles/kendo.common.min.css' rel='stylesheet' type='text/css'/>
+    <link href='css/kendo_styles/kendo.default.min.css' id="kendoStyle" rel='stylesheet' type='text/css'/>
+    
+    <link href='css/terminal_black.css' rel='stylesheet' type='text/css'/>
+    <style type="text/css">
+      body {
+        background-image: url('img/neutron.jpg');
+        font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+        font-size: 13px;
+      }
+      
+      #terminal {
+        font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cursor">&nbsp;</div>
+    <div id="input_wrapper">
+      <div>
+        <textarea name="term_input" id="term_input"></textarea>
+      </div>
+    </div>
+    <div id="icons">
+      <div class="a" onclick="close_current()" id="close_icon">
+        <img src="img/term/close.png" alt="Close Terminal" title="Close Terminal">
+      </div>
+      <div class="a" onclick="show_pref()" id="pref_icon">
+        <img src="img/term/gears.png" alt="Preferences" title="Preferences">
+      </div>
+      <div class="a" onclick="select_mode()" id="sel_icon">
+        <img src="img/term/sel.png" alt="Select Mode" title="Select Mode">
+      </div>
+      <div class="a" onclick="prev_page()" id="up_icon">
+        <img src="img/term/up.png" alt="Page Up" title="Page Up">
+      </div>
+      <div class="a" onclick="next_page()" id="down_icon">
+        <img src="img/term/down.png" alt="Page Down" title="Page Down">
+      </div>
+      <div class="a" onclick="start_terminal()" id="add_icon">
+        <img src="img/term/add.png" alt="New Terminal" title="New Terminal">
+      </div>
+    </div>
+    <div id="terminal_wrapper">
+      <div>
+        <pre id="terminal"><div id="line0"><span>&nbsp;</span></div></pre>
+      </div>
+    </div>
+    <div id="terminal_calc">
+      <pre><div><span>&nbsp;</span></div></pre>
+    </div>
+    <div id="reconnect">
+      <input type="button" name="connect" value="Start A New Terminal" onclick="return start_terminal()">
+    </div>
+    <div id="refresh" class="hidden">
+      <input type="button" name="connect" value="Reload to Reconnect" onclick="window.location.reload()">
+    </div>
+    <div id="term_pref">
+      <iframe width="100%" height="260" frameBorder="0" scrolling="auto"></iframe>
+    </div>
+    <script type="text/javascript">
+      var ws;
+      var cookie_name = 'neutronsession';
+      var wsurl = "wss://secure-dev.hostelz.com/admin/codeEditor/codeEditor.php?cmd=terminal";
+     
+      var terminals = {};
+      var terminal_count = 0;
+      
+      var ws;
+    </script>
+    <script type="text/javascript" src='js/jquery.js'></script>
+    <script type="text/javascript" src='js/kendo.all.min.js'></script>
+    <!--<script type="text/javascript" src='js/term/rawinflate.js'></script>-->
+    <script type="text/javascript" src='js/common.js'></script>
+    <script type="text/javascript" src='js/terminal.js'></script>
+  </body>
+</html>

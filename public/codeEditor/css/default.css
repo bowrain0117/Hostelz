@@ -1,0 +1,680 @@
+/* Tweaks to the theme colors */
+
+/* Added to make the active line more obvious - david */
+.ace-twilight .ace_marker-layer .ace_active-line {
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.ace_comment {
+    color:#c2b6e7 !important;
+}
+
+.ace_gutter {
+    color: #555 !important;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  overflow: hidden;
+}
+
+#new_stuff {
+    text-align: left;
+}
+
+#quick_search {
+  width: 125px;
+  margin: 0 10px 0 5px;
+}
+
+.mono, .ace_editor {
+  font-family: 'Droid Sans Mono', "Courier New", courier, monospace;
+}
+
+textarea {
+  font-family: 'Droid Sans Mono', "Courier New", courier, monospace;
+}
+
+a {
+  text-decoration: none;
+}
+
+.floatr {
+  float: right;
+}
+
+img {
+  border: 0;
+}
+
+button img {
+  display: inline-block;
+}
+
+.clear {
+  clear: both;
+}
+
+ul.emodes {
+  width: 310px;
+}
+
+ul.emodes li {
+  float: left;
+  width: 150px;
+}
+
+/* i don't know why this was here, but it made the background color white after upgrading to the new Ace version
+#editor_global {
+  height: 300px;
+  width: 300px;
+  background-color: #fff;
+}
+*/
+
+#neutron_ui {
+  
+}
+
+#neutron_menubar button img {
+  vertical-align: text-top;
+  padding-top: 2px;
+}
+
+#neutron_menubar {
+  text-align: left;
+
+  overflow: hidden;
+  padding: 0 0 0 5px;
+  
+  display: -webkit-box;
+  -webkit-box-align: center;
+  
+  display: -moz-box;
+  -moz-box-align: center;
+}
+
+#neutron_menubar div {
+ display: inline-block
+}
+
+#neutron_menubar .k-button {
+  font-size: 80%;
+}
+
+#neutron_ui > .k-splitbar-vertical {
+  display: none;
+}
+
+#neutron_body {
+  margin-top: -3px;
+}
+
+#main_menu {
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  border-style: solid;
+  border-width: 1px;
+}
+
+#current_path {
+  font-size: 0.8em;
+  overflow: hidden;
+  /* text-overflow: ellipsis; */
+  display: inline-block;
+  white-space: nowrap;
+  text-align: left;
+}
+
+#currentEdits {
+  font-size: 0.8em;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  text-align: right;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+#tooltabs {
+  height: 100%;
+  text-align: left;
+}
+
+#tooltabs.k-tabstrip .k-content {
+  margin: 0;
+  padding: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+}
+
+#tooltabs > ul > li {
+  font-size: 11px;
+}
+
+#tooltabs > div {
+  overflow: auto;
+}
+
+#tooltabs .k-tabstrip-items .k-item {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  margin: 0 0 -1px 0;
+}
+
+#tooltabs.k-tabstrip .k-tabstrip-items {
+  padding: 0;
+}
+
+#file_browser {
+}
+
+#file_browser > a {
+  text-align: center;
+  border-bottom: solid 1px #bbb;
+}
+
+#tabs li .ui-icon-close { float: left; margin: 0.2em 0.2em 0 0; cursor: pointer; }
+
+.editor {
+  width: 100%;
+  height: 0px;
+}
+
+#tabsinner {
+  height: 100%;
+}
+
+div.inner {
+  text-align: left;
+}
+
+#tabs {
+  padding: 0;
+  overflow:hidden;
+}
+
+#tabs .ui-tabs {
+  padding: 0;
+  border: 0;
+}
+
+#tabs .ui-widget-header {
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+#tabs .ui-corner-all {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+#tabs .ui-tabs .ui-tabs-panel {
+  padding: 0;
+}
+
+ul.jqueryFileTree {
+  font-family: 'Open Sans', sans-serif;
+}
+
+#tabsinner ul {
+  font-size: 11px;
+}
+
+#status {
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.logo { font-family: arial, serif; }
+#logo {
+  font-size: 14px;
+  padding-right: 15px;
+}
+
+.unsavedTab {
+  color: #ffbbbb !important;
+}
+
+.ui-tabs .ui-tabs-nav li a {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ui-layout-pane {
+  padding: 2px;
+}
+
+.ui-layout-north.ui-layout-pane {
+  padding: 2px 5px;
+  background: #DDD;
+  border: 0;
+  overflow: hidden;
+}
+
+.ui-layout-resizer.ui-layout-resizer-north {
+  height: 2px;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a {
+  cursor: pointer;
+}
+
+.indent {
+  padding-left: 40px;
+}
+
+#saveall {
+  display: none;
+}
+
+#saveall p {
+  padding: 0;
+  margin: 2px 0;
+}
+
+.right_menu {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-style: solid;
+  border-width: 1px;
+}
+
+
+.right_menu, #main_menu {
+  font-size: 11px;
+  line-height: 18px;
+}
+
+.right_menu a, #main_menu a {
+  text-decoration: none;
+}
+
+#main_menu span.arrow {
+  width: auto;
+  float: right;
+  padding: 0 10px 0 0;
+}
+
+#main_menu span.submenu ul {
+  display: none;
+  position: absolute;
+  margin: -22px 0 0 100px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+#main_menu span.submenu:hover > ul {
+  display: block;
+}
+
+.right_menu ul, #main_menu ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.right_menu ul li, #main_menu ul li {
+  padding: 2px;
+  margin: 0;
+}
+
+.right_menu ul li.btop, #main_menu ul li.btop {
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+
+.right_menu ul li.fd {
+  font-size: 10px;
+  text-align: center;
+}
+
+.right_menu ul li a, #main_menu ul li a, .right_menu ul li span, #main_menu ul li span {
+  display: block;
+  width: 120px;
+  padding: 3px 0 0 23px;
+}
+
+.right_menu ul li a, #main_menu ul li a {
+  background-repeat: no-repeat;
+  background-position: 1px 4px;
+}
+
+.right_menu ul li a.new {
+  background-image: url(../img/new.png);
+}
+
+.right_menu ul li a.cancel, #main_menu ul li a.cancel {
+  background-image: url(../img/cancel.png);
+}
+
+.right_menu ul li a.refresh {
+  background-image: url(../img/refresh.png);
+}
+
+.right_menu ul li a.delete {
+  background-image: url(../img/remove.png);
+}
+
+.right_menu ul li a.view {
+  background-image: url(../img/view.png);
+}
+
+.right_menu ul li a.rename {
+  background-image: url(../img/rename.png);
+}
+
+#main_menu ul li a.about {
+  background-image: url(../img/about.png);
+}
+
+#main_menu ul li a.term {
+  background-image: url(../img/terminal.png);
+}
+
+#main_menu ul li a.pref {
+  background-image: url(../img/menu.png);
+}
+
+#main_menu ul li a.link {
+  background-image: url(../img/link.png);
+}
+
+/* Tab CSS */
+.ui-tabs { position: relative; padding: .2em; zoom: 1; } /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+.ui-tabs .ui-tabs-nav { margin: 0; padding: .2em .2em 0; }
+.ui-tabs .ui-tabs-nav li { list-style: none; float: left; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bottom: 0 !important; padding: 0; white-space: nowrap; }
+.ui-tabs .ui-tabs-nav li a { float: left; padding: .5em .7em .5em 1em; text-decoration: none; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected { margin-bottom: 0; padding-bottom: 1px; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a { cursor: text; }
+.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; } /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+.ui-tabs .ui-tabs-panel { display: block; border-width: 0; padding: 1em 1.4em; background: none; }
+.ui-tabs .ui-tabs-hide { display: none !important; }
+
+.ui-helper-reset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  line-height: 1.3;
+  text-decoration: none;
+  font-size: 100%;
+  list-style: none;
+}
+
+.ui-helper-clearfix::after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.ui-helper-clearfix {
+  display: block;
+}
+
+.ui-tabs .ui-tabs-nav {
+  margin: 0;
+  padding: .2em .2em 0;
+}
+
+.ui-icon {
+  padding-right: 0.8em;
+  font-weight: bold;
+}
+
+#search_panel {
+  text-align: left;
+}
+
+}
+#search_panel > li {
+  font-size: 0.7em;
+}
+
+#search_panel #search_panel_search > div.k-content  {
+  padding: 2px 5px;
+}
+
+#search_panel_search form > div {
+  padding: 3px 0;
+  margin: 0;
+}
+
+#search_panel_search input[type='text'] {
+  width: 90%;
+  min-width: 75px;
+}
+
+#search_panel .indent {
+  padding: 0 0 0 10px;
+}
+
+#search_panel .top_radio .opt {
+  float: left;
+  padding: 0 8px 0 0;
+}
+
+#search_panel .indent .opt {
+  float: left;
+  width: 125px;
+  padding: 0 8px 2px 0;
+  overflow: hidden;
+  /* text-overflow: ellipsis; */
+  white-space: nowrap;
+}
+
+#search_panel #dirchooser.indent {
+  padding-top: 5px;
+}
+
+#dirchooser {
+  white-space: nowrap;
+}
+
+#dirchooser button {
+  padding: 2px 5px 0px 5px;
+  vertical-align: text-top;
+  margin-top: -5px;
+}
+
+#dirchooser div {
+  padding-bottom: 5px;
+}
+
+#search_panel_search #dirchooser input[type='text'] {
+  width: 80%;
+}
+
+#search_panel_results .title {
+  padding: 2px 4px;
+}
+
+#search_panel_results .title em {
+  display: block;
+  float: right;
+}
+
+#search_panel_results table {
+  border-collapse: collapse;
+  border: 0;
+  width: 100%;
+}
+
+#search_panel_results table td {
+  padding: 2px 4px;
+  border-top-width: 1px;
+  border-top-style: solid;
+  vertical-align: top;
+}
+
+#search_panel_results table tr td:nth-child(2) {
+  text-align: right;
+  width: 65px;
+}
+
+#search_panel_results table td div.lines {
+  padding: 2px 2px 2px 5px;
+}
+
+#search_panel_results a {
+  display: block;
+}
+
+#search_panel_results a.expand {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100px;
+}
+
+#search_panel_results table td div.lines a {
+  padding: 3px 0 3px 4px;
+  border-top-width: 1px;
+  border-top-style: dotted;
+}
+
+
+#dir_chooser .browser {
+  height: 320px;
+  overflow: auto;
+  margin-bottom: 5px;
+}
+
+#dir_chooser input[type='text'] {
+  width: 255px;
+}
+
+/* Grep */
+
+#grep_panel {
+  text-align: left;
+}
+
+#grep_panel > li {
+  font-size: 1em;
+}
+
+#grep_panel #grep_panel_search > div.k-content  {
+  padding: 2px 5px;
+}
+
+#grep_panel_search form > div {
+  padding: 3px 0;
+  margin: 0;
+}
+
+#grep_panel_search input[type='text'] {
+  width: 90%;
+  min-width: 75px;
+}
+
+#grep_panel .indent {
+  padding: 0 0 0 10px;
+}
+
+#grep_panel .top_radio .opt {
+  float: left;
+  padding: 0 8px 0 0;
+}
+
+#grep_panel .indent .opt {
+  float: left;
+  width: 175px;
+  padding: 0 8px 2px 0;
+  overflow: hidden;
+  /* text-overflow: ellipsis; */
+  white-space: nowrap;
+}
+
+#grep_panel #dirchooser.indent {
+  padding-top: 5px;
+}
+
+#grep_panel_search #dirchooser input[type='text'] {
+  width: 80%;
+}
+
+#grep_panel_results .title {
+  padding: 2px 4px;
+}
+
+#grep_panel_results .title em {
+  display: block;
+  float: right;
+}
+
+#grep_panel_results table {
+  border-collapse: collapse;
+  border: 0;
+  width: 100%;
+}
+
+#grep_panel_results table td {
+  padding: 2px 4px;
+  border-top-width: 1px;
+  border-top-style: solid;
+  vertical-align: top;
+}
+
+#grep_panel_results table tr td:nth-child(2) {
+  text-align: right;
+  width: 65px;
+}
+
+#grep_panel_results table td div.lines {
+  padding: 2px 2px 2px 5px;
+}
+
+#grep_panel_results a {
+  display: block;
+}
+
+#grep_panel_results a.expand {
+  overflow: hidden;
+  /* text-overflow: ellipsis; */
+  white-space: nowrap;
+  width: 100px;
+}
+
+#grep_panel_results table td div.lines a {
+  padding: 3px 0 3px 4px;
+  border-top-width: 1px;
+  border-top-style: dotted;
+}
+
+
+/* Our mode background colors for tabs */
+
+.mode_php {
+    background-color: #555A73 !important; // blue
+}
+.mode_javascript {
+    background-color: #566761 !important; // green
+}
+.mode_css {
+    background-color: #4C4C40 !important; // yellow
+}
+.mode_html {
+    background-color: #5D5259 !important; // purple
+}
+
+.ui-tabs-selected {
+    border-color: #FFFFFF !important; // so we can still clearly see which tab is selected
+    border-width: 2px !important;
+}

@@ -1,0 +1,349 @@
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "variables";
+
+
+/** Booking Search Form **/
+
+$bannerColor: lighten(desaturate($brand-primary, 4%), 8%);
+
+.bookingBanner {
+    margin-top: 4px;
+    height: 80px;
+    text-align: right;
+    line-height: 120%;
+    background-image: url('/images/magnifyingGlass.png');
+    background-repeat: no-repeat;
+    background-position: 6px -70px;
+    background-color: $bannerColor;
+    color: #ffffff;
+    position: relative; /* box needed for relative position for underBarArrow's absolute */
+    z-index: 1;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 14px;
+    font-size: 21px;
+    float: right;
+}
+
+// For the speech bubble arrow thing
+.bookingBanner:after 
+{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    display: block;
+    width: 0;
+    z-index: 1;
+    border-width: 12px 12px 0;
+    border-color: $bannerColor transparent;
+    bottom: -12px;
+    right: 24px;
+    filter: drop-shadow(1px 2px 4px rgba(0,0,0,.2));
+}
+
+/* Make the calendar's today box not so bright that it confuses users about what the selected day is */
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    background: none;
+} 
+
+.bookingSearchAndResults {
+    background-color: $primary-xlt-bg;
+    width: 100%;
+}
+
+.bookingSearchForm {
+    overflow: auto; /* to keep the inner boxes margins from collapsing with our margins */
+}
+
+.bookingSearchForm > div {
+    margin: 12px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+
+    > div { /* each of the form parts */
+        margin: 1px 12px 1px 8px;
+        
+        &:last-child {
+            margin-right: 8px;
+        }
+    }
+    
+    .bookingSearchRooms, .bookingSearchGroup {
+        display: none; // hidden for now, but may be displayed by the Javascript depending on other form options
+    }
+    
+    .bookingSearchRoomType {
+        
+        @media (max-width: $screen-xs-min) {
+            label {
+                font-size: 12px; /* to make it fit on iPhone screens */
+            }
+        }
+    }
+    
+    .bookingSearchDate {
+        width: 12em;
+        
+        .btn {
+            color: $brand-primary;
+            background-color: $primary-lt-bg;
+        }
+    }
+    
+    .bookingSearchGroup {
+        /* Note: "display: flex" gets set by javascript when these fields are made visible. */
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+        margin: 0 0; // No margin for this one because the margin will come from our child divs.
+        
+        > div {
+            margin: 1px 12px;
+        }
+    }
+    
+    .plusMinus {
+        width: 8em;
+        
+        .btn {
+            background-color: $primary-lt-bg;
+            font-weight: 700;
+        }
+    }
+    
+    div.checkbox {
+        display: inline-block;
+        margin-right: 12px;
+    }
+    
+    .btn .fa {
+        color: hsl($primary-hue, 40%, 40%);
+        margin-right: 4px;
+    }
+}
+
+.bookingSearchStatusBox {
+    margin-top: 20px;
+    background-color: hsl($primary-hue, 20%, 94%);
+    color: hsl($primary-hue, 100%, 10%);
+    overflow: auto; /* to keep the inner boxes margins from collapsing with our margins */
+    
+    h1 {
+        margin: 0 0;
+        background-color: hsl($primary-hue, 20%, 88%);
+        color: hsl($primary-hue, 100%, 10%);
+        padding: 10px;
+        text-align: center;
+        font-size: 24px;
+        @media (max-width: $screen-sm-min) {
+            font-size: 18px;
+        }
+    }
+    
+    .alert {
+        margin-bottom: 0;
+    }
+    
+    > div {
+        margin: 18px;
+    }
+}
+
+/* No Search */
+
+.bookingNoSearchYet {
+    h1 {
+        font-size: 16px !important;
+    }
+    
+    h3 {
+        font-size: 16px;
+        margin: 18px 0 0 0;
+    }
+        
+    > div {
+        text-align: center;
+        font-size: 16px;
+    
+        /* Each Booking System Logo */
+
+        > div {    
+            @media (max-width: $screen-sm-min) {
+                display: none;
+            }
+        
+            > div {
+                display: inline-block;
+            	width: 140px;
+            	height: 42px; 
+            	line-height: 40px; /* for vertical centering */
+                background-color: #fff;
+                border-radius: 5px;
+                margin: 5px 5px;
+                text-align: center;
+                
+                img {
+                    max-width: 100px;
+                    max-height: 20px;
+                }
+            }
+        }
+    }
+}
+
+
+/* Please Wait */
+
+.bookingWait > div {
+    text-align: center;
+    
+    /* Each "Checking..." line */
+    
+    > div {
+        font-size: 16px;
+        
+        /* Booking System Logo Box */ 
+        
+        > div {
+            display: inline-block;
+        	width: 190px;
+        	height: 40px; 
+        	line-height: 40px; /* for vertical centering */
+            background-color: #fff;
+            border-radius: 5px;
+            margin: 5px 10px;
+            text-align: center;
+            
+            img {
+                max-width: 140px;
+                max-height: 25px;
+            }
+        }
+        
+        i {
+            color: $brand-primary;
+            font-size: 20px;
+            margin-left: 8px;
+        }
+    }
+}
+
+
+/* Booking Search Results (choose room type) */
+
+.chooseRoomType {
+        
+    h3 {
+        margin: 0 0 18px 0;
+        @media (max-width: $screen-sm-min) {
+            font-size: 18px;
+        }
+    }
+    
+    .currencySelectorPlaceholder {
+        margin-bottom: 6px; // just needed for small mobile displays
+    }
+
+    .room {
+        background-color: #fff;
+        padding: 8px 6px;
+        border-radius: 5px;
+        margin: 4px 0;
+    }
+    
+    .roomInfo {
+        padding: 2px 6px;
+        
+        .roomName {
+            font-size: 15px;
+        }
+        
+        .roomDetail  {
+            margin-top: 4px;
+            font-size: 13px;
+        }
+        
+        .text-warning {
+            color: $state-danger-text;
+        }
+        
+        .text-danger {
+            background-color: $state-danger-bg;
+            padding: 3px;
+        }
+    }
+    
+    .priceList {
+        text-align: right;
+        font-size: 9px;
+        border-spacing: 0;
+        border-collapse: separate;
+        line-height: 110%;
+        
+        // System Name
+        tr td:nth-child(1) {
+            text-align: right;
+            padding: 2px 3px 2px 6px;
+            white-space: nowrap;
+           
+            a {
+                text-decoration: underline;
+            }
+        }
+        
+        // Price
+        tr td:nth-child(2) {
+            font-size: 10px;
+            padding: 2px 6px 2px 3px;
+            white-space: nowrap;
+            
+            &.noAvailability {
+                font-size: 9px;
+                color: #aaa;
+            }
+        }
+        
+        .bestPrice {
+            td {
+                background-color: $primary-lt-bg;
+            }
+            
+            // System Name
+            td:nth-child(1) {
+                padding-top: 4px;
+                padding-bottom: 4px;
+                font-weight: 700;
+                border-radius: 5px 0 0 5px;
+            }
+            
+            // Price
+            td:nth-child(2) {
+                padding-top: 4px;
+                padding-bottom: 4px;
+                font-weight: 700;
+            }
+            
+            // Book Now
+            td:nth-child(3) {
+                text-align: center;
+                padding: 12px 10px;
+                line-height: 140%;
+                width: 100%;
+                border-radius: 0 5px 5px 5px;
+            
+                .bestPriceSubtitle {
+                    font-size: 11px;
+                    margin-bottom: 8px;
+                }
+                
+                .bestPriceAmount {
+                    font-size: 14px;
+                    font-weight: 700;
+                    color: $brand-danger;
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+}

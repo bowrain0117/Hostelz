@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: hostelz.com
+Token: 9870a58c994eb3ddf69edf97e684eaba2d3494594db08d0548ff3d41539b3150

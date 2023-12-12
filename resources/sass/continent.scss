@@ -1,0 +1,45 @@
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "variables";
+
+h1 {
+    font-weight: normal;
+    font-size: 40px;
+    padding: 10px 0 0 0;
+    color: #666666;
+    margin: 14px 0 10px 0;
+    
+    span {
+        font-weight: 700;
+    }
+}
+
+
+// Country Name
+
+.countries {
+    
+    .country {
+        .panel-heading {
+            font-size: 20px;
+            text-decoration: underline;
+        }
+        
+        .panel-body {
+            > a {
+                display: inline-block;
+                width: 16em;
+                margin: 1px 8px;
+            }
+            
+            div {
+                font-weight: 700;
+                font-size: 16px;
+                margin-top: 16px;
+                
+                a {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

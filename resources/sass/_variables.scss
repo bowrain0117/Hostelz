@@ -1,0 +1,88 @@
+// ** Our own variables **
+
+$primary-hue: 243;
+$secondary-hue: 200;
+
+// Our own misc convenience color stuff
+
+$primary-xlt-bg: hsl($primary-hue, 15%, 98%);
+$primary-xlt-border: darken($primary-xlt-bg, 5%);
+
+$primary-lt-bg: hsl($primary-hue, 50%, 96%);
+$primary-lt-border: darken($primary-lt-bg, 5%);
+
+$primary-md-bg: hsl($primary-hue, 50%, 90%);
+$primary-md-border: darken($primary-md-bg, 5%);
+
+$primary-dk-text: hsl($primary-hue, 100%, 5%);
+
+// Add a xxs screen size (extra extra small, such as iPhone 5 in portrait mode)
+$screen-xxs-min: 480px;
+
+// Add a screen-xlg size
+$container-xlg: 1400px;
+$screen-xlg-min: $container-xlg + 400;
+
+
+// ** Customized Values for Bootstrap Variables **
+
+// Our own modified settings of Bootstrap variables originally defined in bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
+
+$brand-primary:         hsl($primary-hue, 43%, 60%); // (purple) matches the logo color. was 38%, 46%
+$brand-success:         hsl(131, 30%, 56%); // (green)
+$brand-info:            hsl($secondary-hue, 20%, 55%);
+$brand-warning:         hsl( 45, 70%, 65%); // #4 (yellow)
+$brand-danger:          hsl(  0, 58%, 63%); // #3 (red)
+
+
+// Form states and alerts (used for alert-success, alert-danger, etc.)
+
+$state-success-text:             darken($brand-success, 40%);
+$state-success-bg:               desaturate(lighten($brand-success, 38%), 10%);
+$state-success-border:           darken($state-success-bg, 10%);
+
+$state-info-text:                darken($brand-info, 40%);
+$state-info-bg:                  lighten($brand-info, 38%);
+$state-info-border:              darken($state-info-bg, 7%); // original bootstrap: darken(adjust-hue($state-info-bg, -10), 7%);
+
+$state-warning-text:             darken($brand-warning, 40%);
+$state-warning-bg:               lighten($brand-warning, 28%);
+$state-warning-border:           darken($state-warning-bg, 5%);
+
+$state-danger-text:              darken($brand-danger, 40%);
+$state-danger-bg:                lighten($brand-danger, 32%);
+$state-danger-border:            darken($state-danger-bg, 5%);
+
+
+// Customize colors and stuff here
+
+$gray-darker:            lighten(#000, 13.5%); 
+$gray-dark:              lighten(#000, 20%);   
+$gray:                   lighten(#000, 33.5%); 
+$gray-light:             lighten(#000, 60%);   
+$gray-light2:            lighten(#000, 90%);
+$gray-lighter:           lighten(#000, 93.5%); // #eee
+
+$font-family-sans-serif:  "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+
+$icon-font-path:          "../vendor/bootstrap-fonts/";
+
+$breadcrumb-bg: #fff;
+$breadcrumb-active-color: $gray;
+$breadcrumb-separator: "/";
+$table-bg-accent: #fafafa;
+
+$link-color: darken($brand-primary, 15);
+
+$well-bg: $primary-xlt-bg;
+$well-border: $primary-xlt-border;
+
+//== Panels
+
+$panel-default-text:          $gray-dark;
+$panel-default-border:        #ddd;
+$panel-default-heading-bg:    #f4f4f4;
+
+$panel-primary-text:          #fff;
+$panel-primary-border:        hsl($primary-hue, 35%, 65%);
+$panel-primary-heading-bg:    hsl($primary-hue, 30%, 70%);

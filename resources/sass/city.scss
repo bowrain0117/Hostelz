@@ -1,0 +1,570 @@
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "variables";
+
+h1 {
+    font-weight: normal;
+    padding: 10px 0 0 0;
+    color: #666666;
+    margin: 14px 0 10px 0;
+    font-size: 40px;
+    @media (max-width: $screen-sm-min) {
+        padding-top: 4px;
+        font-size: 30px;
+    }
+    
+    span {
+        font-weight: 700;
+    }
+}
+
+.topBarUnderline {
+    border-color: #e3e3e3;
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    clear: both;
+}
+
+.sideBar {
+    @media (min-width: $screen-md-min)
+    {
+        /* Special modified version of .contentBox for the sideBar */
+        
+        .contentBox {
+        
+            h2.contentBoxTitle {
+                font-size: 14px;
+                padding: 6px 10px;
+                margin: 0 0 12px 0;
+            }
+            
+            .contentBoxContent {
+                font-size: 13px;
+                padding: 0 10px 20px 10px;
+            }
+            
+            h3 {
+                font-size: 14px;
+                font-weight: 700;
+                margin: 20px 0 10px 0;
+                padding: 0 0 8px 0;
+                border-bottom: 1px solid $gray-light2; 
+                
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+    
+    .cityDescriptionAuthor {
+        div {
+            padding-top: 12px;
+            font-style: italic;
+        }
+        img {
+            float: left;
+            margin: 14px 16px 4px 0;
+            border-radius: 50%;
+        }
+    }
+    
+    .cityPic {
+        margin-bottom: 20px;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    
+        img {
+            width: 100%;
+            display: block;
+            margin: auto;
+        }
+        /*
+        .caption {
+            font-size: 11px;
+            margin-top: 7px;
+            text-align: center;
+            line-height: 145%;
+        } */
+    }
+    
+    .ad > div {
+        font-size: 11px;
+        line-height: 135%;
+        padding: 10px;
+        border: 1px solid $state-info-border;
+        margin-right: 38px;
+        display: table; /* to shrink-wrap the border */
+        
+        img {
+            display: block;
+            margin-bottom: 5px;
+            
+            @media (min-width: $screen-md-min)
+            {
+                width: 100%
+            }
+        }
+        
+        a {
+            color: $gray-dark;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.listingFilters {
+    margin: 0 0 12px 0;
+    padding: 9px 18px;
+    background-color: hsl($primary-hue, 20%, 95%); /* #EDEDF5 */
+    
+    > div {
+        margin: 3px 0;
+    }
+}
+
+.listingFilterBreadcrumbs {
+    margin: 20px 0 0 0;
+    
+    > div {
+        color: white;
+        background-color: hsl($primary-hue, 30, 70);
+        padding: 4px 10px;
+        margin: 4px 8px 4px 0;
+        border-radius: 8px;
+        display: inline-block;
+        font-size: 13px;
+        font-weight: 700;
+        
+        // Search Criteria title and "x" icon
+        span, .fa { 
+            font-weight: 100;
+            color: hsl($primary-hue, 50, 95);
+        }
+        
+        // "x" Icon
+        .fa {
+            margin-left: 7px;
+        }
+    }
+}
+
+#listingsSearchResult {
+    margin: 24px 0 28px 0;
+    
+    .pagination {
+        margin: 0 12px 0 0;
+        vertical-align: middle
+    }
+    
+    .resultsHeader {
+         
+        .resultsCount {
+            color: #666;
+            font-size: 30px;
+            display: inline-block;
+            
+            span {
+                font-weight: 700;
+            }
+        }
+        
+        .resultsOptions {
+            @media (min-width: $screen-lg-min) {
+                float: right;
+            }
+            
+            select {
+                margin: 6px 0;
+            }
+            
+            @media (min-width: $screen-xs-min) {
+                select {
+                    display: inline-block;
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+
+.listingsList {
+    margin-top: 20px;
+    margin-bottom: 35px;
+    
+    /* Property Type */
+    h2 { 
+        color: #666;
+        font-size: 30px;
+        margin-top: 18px;
+    }
+}
+
+.listing-gridFormat {
+    display: block;
+    padding: 5px;
+    border: 1px solid #e3e3e3;
+    background: #f5f5f5;
+    width: 100%;
+    
+    margin-bottom: 16px;
+    @media (min-width: $screen-md-min) {
+        margin-bottom: 20px;
+    }
+    
+    > div {
+        position: relative; // so the inner absolute contents are positioned correctly
+        width: 100%;
+        height: 220px;
+        background-position: top left;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .combinedRatingCircle {
+        position: relative;
+        float: right;
+        margin: -37px 10px 5px 5px;
+
+        img {
+            opacity: 0.9;
+        }
+    }
+
+    h3 {
+        font-size: 19px;
+        margin: 0 auto 0 auto;
+        padding: 10px 10px;
+        color: #fff;
+        background-color: rgba(0,0,0, 0.6);
+    }
+    
+    .neighborhood {
+        background-color: rgba(0,0,0, 0.7);
+        padding: 5px 6px;
+        font-size: 13px;
+        color: #ddd;
+        text-align: right;
+    }
+    
+    .listingBottomInfo {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        color: #ddd;
+        background-color: rgba(0,0,0, 0.5);
+        
+        .description {
+            line-height: 130%;
+            padding: 10px 10px;
+            font-size: 12px;
+        }
+        
+        .listingInfoLine {
+            margin: 2px 2px;
+            padding: 3px 8px;   
+            color: #fff;
+            font-size: 13px;
+            background-color: rgba(0,0,0, 0.5);
+            
+            .text-danger {
+                color: #FFCFCF;
+            }
+        }
+    }
+}
+
+.listing-listFormat {
+    display: block;
+    margin: 8px 0;
+
+    .listingMainInfo {
+        position: relative;
+    }
+
+    .listingPic {
+        z-index: 1;
+        padding: 0px;
+        overflow: hidden;
+
+        /* smalls screens only */
+        max-height: 90px; 
+
+        @media (min-width: $screen-sm-min) {
+            max-height: none;
+            float: left;
+        }
+
+        img {
+            /* small screens only */
+            min-width: 100%; /* stetch the image if necessary (but don't shrink it, looks better unscaled but cropped) */
+
+            @media (min-width: $screen-sm-min) {
+                min-width: auto;
+                margin: 0px 10px 0px 0px;
+                width: 200px;
+            }
+
+            @media (min-width: $screen-lg-min) {
+                width: 250px;
+            }
+
+            display: block;
+        }
+    }
+
+    .combinedRatingCircle {
+        right: 0;
+
+        /* small screens only (make the title overlap the photo) */
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        margin: 5px 5px 5px 5px; /* to keep text from getting too close */
+
+        @media (min-width: $screen-sm-min) {
+            position: relative;
+            top: 10px;
+            bottom: auto;
+            float: right;
+            margin: 0 8px 8px 10px; /* to keep text from getting too close */
+        }
+    }
+
+    .listingName {
+        /* small screens only (make the title overlap the photo and make the clickable-area the whole thing) */
+        position: absolute; 
+        top: 0;
+        z-index: 3;
+        width: 100%;
+        height: 100%;
+
+        @media (min-width: $screen-sm-min) {
+            top: auto;
+            position: static;
+            width: auto;
+            height: auto;
+        }
+
+        h3 {
+            margin: 0px 0px 3px 0px;
+            font-size: 19px;
+            font-weight: 700;
+            padding: 10px 8px;
+
+            /* small screens only */
+            background-color: rgba(0,0,0, 0.7);
+            color: #fff;
+            top: 10px;
+
+            @media (min-width: $screen-sm-min) {
+                background-color: $panel-default-heading-bg;
+                color: $link-color;
+                top: auto;
+            }
+        }
+    }
+
+    .neighborhood {
+        font-size: 12px;
+        z-index: 3;
+
+        /* small screens only (make it overlap the photo) */
+        position: absolute;
+        bottom: 8px;
+        padding: 4px 8px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #eee;
+
+        @media (min-width: $screen-sm-min) {
+            position: static;
+            bottom: auto;
+            padding: 0 0;
+            background-color: transparent;
+            color: $gray-darker;
+            font-weight: 700;
+        }
+    }
+
+    .description {
+        line-height: 130%;
+        padding: 6px 0;
+        font-size: 12px;
+        display: none; /* hidden for smaller screens */
+
+        @media (min-width: $screen-sm-min) {
+            display: block;
+        }
+    }
+        
+    .listingBottomInfo {
+        text-align: right;
+        color: #fff;
+        width: 100%;
+        clear: both;
+        margin-bottom: 10px;
+        overflow: auto; /* makes the vertical margins work */
+
+        .listingInfoLine {
+            margin: 2px 0 0 0;
+            padding: 3px 8px;   
+            color: #fff;
+            font-size: 13px;
+            background-color: $panel-primary-heading-bg;
+            
+            .text-danger {
+                color: #FFCFCF;
+            }
+        }
+
+        .noPrices {
+            color: $gray-light;
+            font-size: 80%;
+            display: none; /* hidden for smaller screens */
+
+            @media (min-width: $screen-sm-min) {
+                display: block;
+            } 
+        }
+    }
+}
+
+.listing {
+    .combinedRatingCircle {
+        overflow: hidden;
+        height: 45px;
+        width: 45px;
+        
+        img {
+            position: absolute;
+            z-index: 4;
+            top: 0;
+            left: 0;
+        }
+        
+        div {
+            position: absolute;
+            z-index: 5;
+            top: 8px;
+            text-align: center;
+            width: 100%;
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            font-family: "Times New Roman", Times, serif;
+        }
+    }
+}
+
+.mainMap {
+    // * Listing Info Window Height *
+        
+    // Small (iPhone Portrait)
+    
+    .mapSmall .listing > div { height: 90px; }
+    .mapBig .listing > div { height: 120px; }
+    
+    // Tiny (iPhone Landscape)
+    @media (max-height: 400px) {
+        .mapSmall .listing > div { height: 90px; }
+        .mapBig .listing > div { height: 90px; }
+    }
+    
+    // Bigger Screens
+    @media (min-height: 740px) {
+        .mapSmall .listing > div { height: 100px; }            
+        .mapBig .listing > div { height: 120px; }
+    }
+    
+    .listing {
+        padding: 0 0;
+        margin: 0 0;
+        overflow: hidden;
+        /* the height is set based on .mapSmall and .mapBig (see above) */
+
+        > div {
+            overflow: none;
+        }
+        
+        h3 {
+            font-size: 14px;
+            width: 100%;
+            background-color: rgba(0,0,0, 0.7);
+            color: #fff;
+        }
+        
+        .neighborhood, .description, .distanceToPOI, .noPrices, .listingInfoLine {
+            display: none !important;
+        }
+        
+        .listingBottomInfo {
+            min-height: 12px;
+        }
+
+        .listingPic {
+            float: none;
+            overflow: hidden;
+        }
+    }
+
+    .listing-gridFormat {
+        .combinedRatingCircle {
+            position: relative;
+            margin: 4px 4px;
+        }
+    }
+
+    .listing-listFormat {
+        .listingName {
+            position: absolute;
+            top: 0;
+        }
+
+        .combinedRatingCircle {
+            position: absolute;
+            top: auto;
+            bottom: 3px;
+            float: none;
+            margin: 4px 4px;
+        }
+
+        .listingBottomInfo {
+            display: none;
+        }
+    }
+}
+
+/* City Comments */
+
+.cityComments {
+    display: none; /* hidden until the listings list loads to avoid jank */
+    
+    .speechBubble {
+        background-color: $panel-default-heading-bg;
+        
+        // For the speech bubble arrow thing
+        &:after {
+            border-color: $panel-default-heading-bg transparent;
+            
+            @media (min-width: $screen-sm-min) {
+                // Larger screen sizes (bubble on the left side)
+                border-color: transparent $panel-default-heading-bg;
+            }
+        }
+        
+        img { // for the quote image
+            margin: -14px 8px 0 0;
+        }
+    }
+}
+
+.cityCommentSubmit {
+    .text-muted {
+        font-size: 13px;
+        margin-top: 12px;
+    }
+}

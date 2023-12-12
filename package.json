@@ -1,0 +1,45 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production"
+  },
+  "devDependencies": {
+    "axios": "^0.21",
+    "laravel-echo": "^1.13.1",
+    "laravel-mix": "^6.0.49",
+    "lodash": "^4.17.19",
+    "postcss": "^8.1.14",
+    "pusher-js": "^7.4.0",
+    "resolve-url-loader": "^4.0.0",
+    "sass": "^1.43.4",
+    "sass-loader": "^12.3.0",
+    "vue-loader": "^17.0.0",
+    "webpack": "^5.64.1"
+  },
+  "dependencies": {
+    "alpinejs": "^3.13.0",
+    "bootbox": "4.*",
+    "bootstrap-sass": "~3.3.*",
+    "chart.js": "^4.2.1",
+    "devbridge-autocomplete": "1.4.*",
+    "fancybox": "2.*",
+    "font-awesome": "4.*",
+    "jquery": "^3.6.0",
+    "jquery-mousewheel": "3.*",
+    "jqueryui": "^1.11.1",
+    "pannellum": "^2.2.1",
+    "plupload": "2.2.*",
+    "select2": "3.5.*",
+    "swiper": "^10.2.0",
+    "twitter-text": "1.*",
+    "vue": "^3.2.30",
+    "vue3-radial-progress": "^1.1.1",
+    "vuex": "^4.0.2"
+  }
+}

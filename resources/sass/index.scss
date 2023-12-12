@@ -1,0 +1,344 @@
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "variables";
+
+
+body { 
+    background: url("/images/homepageBackground-girl.jpg") no-repeat center center fixed; 
+    background-size: cover;
+    background-color: #000; 
+    width: 100%; 
+    height: 100%;
+    z-index: -2;
+}
+
+.header {
+    background-color: transparent;
+    border-color: transparent;
+    background-color: rgba(255,255,255, 0.1);
+    
+    .container > div {
+        border-color: transparent;
+    }
+    
+    #loggedIn a:not(.btn) {
+        color: #fff;
+    }
+}
+
+#verticalShadeBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto 0 auto;
+    height: 100%;
+    z-index: -1;
+    background-color: rgba(0,0,0, 0.3);
+}
+
+#welcomePanel {
+    color: #fff;
+    
+    img {
+        margin: 40px 0 0 16px;
+        float: left;
+    }
+    
+    div {
+        float: right;
+        text-align: right;
+
+        h1 {
+            margin: 32px 16px 0 16px;
+            font: 22px helvetica,arial,clean,sans-serif;
+        }
+        
+        h2 {
+            margin: 14px 16px 12px 16px;
+            font: bold 36px helvetica,arial,clean,sans-serif;
+        }
+    }
+}
+
+#horizontalShadeBar {
+    width: 100%;
+    margin: 16px 0 16px 0;
+    background-color: rgba(0,0,0, 0.5);
+    
+    .container {
+        padding-top: 15px;
+        padding-bottom: 40px;
+        @media (min-width: $screen-sm-min) {
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+    }
+    
+    #searchBox {
+        label {
+            margin-top: 30px;
+            font: 22px "century gothic", "arial", sans-serif;
+            font-weight: 400;
+            color: #eee;
+        }
+        
+        div.row div:nth-child(1) {
+            margin-top: 6px;
+            @media (min-width: $screen-sm-min) {
+                padding-right: 0;
+            }
+        }
+        
+        div.row div:nth-child(2)  {
+            margin-top: 6px;
+        }
+        
+    }
+    
+        
+    /* Featured Cities */
+    
+    #featuredCityBox {
+        clear: both;
+        vertical-align: bottom;
+        margin: 18px 0 0 0;
+        
+        // "Featured Cities" title
+        div {
+            display: inline-block;
+            color: #fff;
+            padding: 7px 10px 8px 10px;
+            font-size: 13px;
+            position: relative;
+            background: $brand-primary;
+            border-radius: 5px;
+            margin-right: 7px;
+        }
+        
+        // For the arrow thing
+        div:after 
+        {
+            content: '';
+            position: absolute;
+            border-style: solid;
+            display: block;
+            width: 0;
+            z-index: 1;
+            border-width: 6px 0 6px 6px;
+            border-color: transparent $brand-primary;
+            top: 10px;
+            bottom: auto;
+            left: auto;
+            right: -6px;
+        }
+        
+        // Each city
+        span {
+            font-size: 12px;
+            margin: 8px 0 8px 9px;
+            display: inline-block;
+        }
+        span a {
+            color: $primary-lt-bg;
+        }
+    }
+    
+    ul#worldMap {
+        margin: 5px 20px 5px 0;
+        width: 300px; /* was 290px... not sure why, actual size 300 */
+        height: 150px;
+        overflow: hidden;
+        position: relative;
+        list-style-type: none;
+        background: url(/images/generated/worldMap.png) 0px 0px no-repeat;
+    }
+    
+    ul#worldMap li a {
+        position: absolute;
+        text-indent: -9999in;
+        background: url(/images/generated/worldMap.png) -999px -999px no-repeat;
+    }   
+}
+
+
+/* Taglines */
+
+.featureTagline1 {
+    padding: 20px 0 0 0;
+    font: 22px "century gothic", "arial", sans-serif;
+    text-align: center;
+    color: #fff;
+}
+
+.featureTagline2 {
+    padding: 16px 0px 0 0px;
+    font: 35px "century gothic", "arial", sans-serif;
+    text-align: center;
+    color: #fff;
+}
+
+
+/* Booking Systems */
+
+#bookingSystems {
+    text-align: center;
+    padding: 20px 10px;
+    
+    span {
+        display: inline-block;
+    	width: 190px;
+    	height: 70px; 
+    	line-height: 70px; /* for vertical centering */
+        background-color: rgba(0,0,0, 0.3);
+        border-radius: 5px;
+        margin: 10px 10px;
+        text-align: center;
+        
+        img {
+            max-width: 140px;
+            max-height: 30px;
+        }
+    }
+}
+
+#testimonials {
+    margin: 60px 0 20px 0;
+    padding: 24px 34px 14px 28px;
+    background-color: rgba(0,0,0, 0.3);
+    border-radius: 5px;
+    
+    blockquote {
+        padding: 13px 0 12px 46px;
+    	margin: 0 0 1px 0;
+    	background-image: url(/images/openQuote.png);
+    	background-position: top left;
+    	background-repeat: no-repeat;
+        border: none;
+        color: #eee;
+        line-height: 130%;
+        
+        p {
+            line-height: 130%;
+        	font-size: 19px;
+        	font-style: italic;
+        	margin: 0 0 4px 0;
+        	float: left;
+        }
+    }
+    
+    footer {
+        margin: 20px 0 4px 10px;
+        text-align: right;
+        color: #ccc;
+        
+        div {
+            margin: 4px 0 0 0;
+            color: #ddd;
+            font-style: italic;
+        }
+        
+        img {
+            max-height: 20px;
+            margin: 4px 0 0 0;
+        }
+    }
+}
+
+
+#awards {
+    margin-top: 30px;
+    
+    > div > div {
+        margin: 2px 0;
+        background-color: rgba(0,0,0,0.3);
+        border-radius: 5px;
+        padding: 12px 12px;
+        text-align: center;
+        height: 100px;
+        
+        img {
+            max-height: 24px;
+            max-width: 140px;
+            width: auto;
+        }
+        
+        div {
+            margin: 12px 0;
+            text-align: center;
+            color: #c7c7c7;
+            font-size: 14px;
+        }
+    }
+    
+    
+}
+
+#recentReviews {
+    margin: 60px 0 20px 0;
+    padding: 24px 34px 14px 28px;
+    background-color: rgba(0,0,0, 0.3);
+    border-radius: 5px;
+
+    h3 {
+        color: #eee;
+        background-color: rgba(0,0,0, 0.3);
+        padding: 10px 12px;
+        margin: 0 0;
+    }
+
+    > div {
+        display:  flex;
+        flex-wrap: wrap;
+    }
+
+    .reviewSnippet {
+        border: none;
+        color: #eee;
+        line-height: 130%;
+
+        img {
+            margin-top: 30px;
+            margin-bottom: 12px;
+        }
+        
+        p {
+            line-height: 130%;
+            font-size: 13px;
+            font-style: italic;
+            margin: 0 0 4px 0;
+        }
+
+        a {
+            color: #eee;
+        }
+    }
+    
+    .reviewFooter {
+        margin: 20px 0 4px 10px;
+        text-align: right;
+        color: #ccc;
+        
+        div {
+            margin: 4px 0 0 0;
+            color: #ddd;
+            font-style: italic;
+        }
+    }
+}
+
+
+.footer {
+    background-color: rgba(255,255,255, 0.3);
+    border-color: transparent;
+    
+    .footerLinks a {
+        color: #eee;
+    }
+}
+
+
+/* Will later be automatically generated.  Just copy and pasting from old site for now. 
+Note: Unlike the old site code, we have to add "!important" to the background-position property so that it will override our default position set above (since our css selector is more specific).
+*/
+
+ul#worldMap li.map-Africa a {width:56px;height:71px;top:53px;left:136px;outline:none;border:0;}ul#worldMap li.map-Africa a:hover {background-position: -136px -203px !important;outline: none;border: 0;}ul#worldMap li.map-AustraliaOceania a {width:53px;height:35px;top:101px;left:245px;outline:none;border:0;}ul#worldMap li.map-AustraliaOceania a:hover {background-position: -245px -401px !important;outline: none;border: 0;}ul#worldMap li.map-CentralEastAsia a {width:82px;height:34px;top:35px;left:189px;outline:none;border:0;}ul#worldMap li.map-CentralEastAsia a:hover {background-position: -189px -485px !important;outline: none;border: 0;}ul#worldMap li.map-CentralSouthAmerica a {width:48px;height:72px;top:73px;left:73px;outline:none;border:0;}ul#worldMap li.map-CentralSouthAmerica a:hover {background-position: -73px -673px !important;outline: none;border: 0;}ul#worldMap li.map-EasternEuropeRussia a {width:138px;height:42px;top:13px;left:161px;outline:none;border:0;}ul#worldMap li.map-EasternEuropeRussia a:hover {background-position: -161px -763px !important;outline: none;border: 0;}ul#worldMap li.map-MexicoCaribbean a {width:46px;height:23px;top:57px;left:53px;outline:none;border:0;}ul#worldMap li.map-MexicoCaribbean a:hover {background-position: -53px -957px !important;outline: none;border: 0;}ul#worldMap li.map-MiddleEast a {width:43px;height:32px;top:45px;left:173px;outline:none;border:0;}ul#worldMap li.map-MiddleEast a:hover {background-position: -173px -1095px !important;outline: none;border: 0;}ul#worldMap li.map-NorthAmerica a {width:94px;height:53px;top:18px;left:11px;outline:none;border:0;}ul#worldMap li.map-NorthAmerica a:hover {background-position: -11px -1218px !important;outline: none;border: 0;}ul#worldMap li.map-SouthSoutheastAsia a {width:47px;height:44px;top:54px;left:208px;outline:none;border:0;}ul#worldMap li.map-SouthSoutheastAsia a:hover {background-position: -208px -1404px !important;outline: none;border: 0;}ul#worldMap li.map-UKIreland a {width:9px;height:7px;top:32px;left:142px;outline:none;border:0;}ul#worldMap li.map-UKIreland a:hover {background-position: -142px -1532px !important;outline: none;border: 0;}ul#worldMap li.map-WesternEurope a {width:45px;height:35px;top:19px;left:131px;outline:none;border:0;}ul#worldMap li.map-WesternEurope a:hover {background-position: -131px -1669px !important;outline: none;border: 0;}

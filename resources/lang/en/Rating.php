@@ -1,0 +1,60 @@
+<?php
+
+return [
+    'forms' => [
+        'fieldLabel' => [
+            'id' => 'ID',
+            'status' => 'Status',
+            'hostelID' => 'Listing',
+            'rating' => 'Rating',
+            'language' => 'Language',
+            'name' => 'Name',
+            'homeCountry' => 'Home Country',
+            'age' => 'Age',
+            'summary' => 'Summary',
+            'comment' => 'Review',
+            'originalComment' => 'Original Review',
+            'ownerResponse' => 'Owner Response',
+            'notes' => 'Notes',
+            'ipAddress' => 'IP Address',
+            'sessionID' => 'Session ID',
+            'userID' => 'User',
+            'email' => 'Email',
+            'emailVerified' => 'Email Verified',
+            'ourBookingID' => 'Our Booking ID',
+            'bookingID' => 'Booking ID',
+            'commentDate' => 'Date',
+            'bayesianBucket' => 'Bayesian Bucket',
+            'bayesianScore' => 'Bayesian Score',
+        ],
+        'options' => [
+            'rating' => [
+                '0' => 'None',
+                '1' => '* (Awful, run away)',
+                '2' => '** (Not So Great)',
+                '3' => '*** (Average)',
+                '4' => '**** (Great)',
+                '5' => '***** (Fantastic)',
+            ],
+            'ratingStars' => [
+                '5' => 'Fantastic',
+                '4' => 'Great',
+                '3' => 'Average',
+                '2' => 'Not So Great',
+                '1' => 'Awful, run away',
+            ],
+            'emailVerified' => [
+                '0' => 'No',
+                '1' => 'Yes',
+            ],
+            'status' => [
+                'userDeleted' => 'Deleted by User',
+                'removed' => 'Removed',
+                'suspicious' => 'Suspicious',
+                'flagged' => 'Flagged',
+                'new' => 'New',
+                'approved' => 'Approved',
+            ],
+        ],
+    ],
+];

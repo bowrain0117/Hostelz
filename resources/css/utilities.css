@@ -1,0 +1,95 @@
+.title {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: -0.02em;
+}
+
+.title-1 {
+  font-size: 64px;
+  line-height: 78px;
+}
+
+.title-2 {
+  font-size: 40px;
+  line-height: 49px;
+}
+
+.title-3 {
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.tx-body {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+}
+
+.sbtitle {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.cl-primary {
+  color: #FF5852;
+}
+
+.cl-second {
+  color: #004369;
+}
+
+.cl-tertiary {
+  color: #01949A;
+}
+
+.cl-tertiary {
+  color: #01949A;
+}
+
+.cl-link {
+  color: #4B4DED;
+}
+
+.cl-dark {
+  color: #0A1B41;
+}
+
+.cl-success {
+  color: #31D0AA;
+}
+
+.cl-error {
+  color: #D03131;
+}
+
+.cl-text {
+  color: #4A5268;
+}
+
+.cl-subtext {
+  color: #787D8D;
+}
+
+.bg-accent {
+  color: #ECEFF4;
+}
+
+.bg-lihgt {
+  color: #FAFBFE;
+}
+
+.bg-lihgt-accent {
+  color: #FAFBFE;
+}
+
+.bg-white {
+  color: #FFFFFF;
+}
+
+/*# sourceMappingURL=utilities.css.map */

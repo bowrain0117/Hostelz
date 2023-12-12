@@ -1,0 +1,5 @@
+import "./vue/modules/sliders/top-pics-slider/app"
+import "./vue/modules/sliders/listings-features-slider/app"
+import "./vue/modules/sliders/listings-rates-slider/app"
+import "./vue/modules/listing-reviews/app"
+import "./vue/modules/comparison/comparison-icon/app"

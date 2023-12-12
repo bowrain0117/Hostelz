@@ -1,0 +1,300 @@
+$font-main: 'Poppins', sans-serif;
+$font-sec: "Montserrat", sans-serif;
+$color-primary: #FF5852;
+$color-second: #004369;
+$color-text: #4A5268;
+$color-dark: #0a1b41;
+
+.title {
+  font-family: $font-sec;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: -0.02em;
+
+  &-1 {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  &-2 {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  &-3 {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  &-4 {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  @media (min-width: 992px) {
+    &-1 {
+      font-size: 64px;
+      line-height: 78px;
+    }
+
+    &-2 {
+      font-size: 40px;
+      line-height: 49px;
+    }
+
+    &-3 {
+      font-size: 24px;
+      line-height: 29px;
+    }
+
+    &-4 {
+      font-size: 16px;
+      line-height: 1.4;
+    }
+  }
+}
+
+.tx {
+  &-body {
+    font-family: $font-main;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  &-small {
+    font-family: $font-main;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 140%;
+
+    p {
+      font-size: 14px;
+      line-height: 140%;
+    }
+  }
+}
+
+.pre-title {
+  font-family: $font-main;
+  font-weight: bold;
+  font-size: 10px !important;
+  line-height: 15px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.sb-title {
+  font-family: $font-main;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.4;
+
+  @media (min-width: 992px) {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+.cl {
+  &-primary {
+    color: $color-primary !important;
+  }
+
+  &-second {
+    color: $color-second !important;
+  }
+
+  &-tertiary {
+    color: #01949A !important;
+  }
+
+  &-tertiary {
+    color: #01949A !important;
+  }
+
+  &-link {
+    color: #4B4DED !important;
+  }
+
+  &-dark {
+    color: $color-dark !important;
+  }
+
+  &-success {
+    color: #31D0AA !important;
+  }
+
+  &-error {
+    color: #D03131 !important;
+  }
+
+  &-text {
+    color: $color-text !important;
+  }
+
+  &-subtext {
+    color: #787D8D !important;
+  }
+
+  &-light {
+    color: #FAFBFE !important;
+  }
+
+  &-black {
+    color: #000 !important;
+  }
+}
+
+.bg {
+  &-second {
+    background: $color-second !important;
+  }
+
+  &-accent {
+    background-color: #ECEFF4 !important;
+  }
+
+  &-light {
+    background-color: #FAFBFE !important;
+  }
+
+  &-light-accent {
+    background-color: rgba(250, 251, 254, 0.32) !important;
+  }
+
+  &-text {
+    background-color: $color-text !important;
+  }
+}
+
+.blur-up {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  transition: filter 400ms, -webkit-filter 400ms;
+}
+
+.blur-up.lazyloaded {
+  -webkit-filter: blur(0);
+  filter: blur(0);
+}
+
+img[data-sizes="auto"] {
+  display: block;
+  width: 100%;
+}
+
+@media(max-width: 768px) {
+  button.full-width, a.full-width {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+}
+
+.top-0 {
+  top: 0;
+}
+
+.right-0 {
+  right: 0;
+}
+
+.left-0 {
+  left: 0;
+}
+
+.bottom-0 {
+  bottom: 0;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-grab {
+  cursor: grab;
+}
+
+.collapse-arrow-wrap {
+  &.collapsed {
+    .fa-angle-up {
+      display: none;
+    }
+    .fa-angle-down {
+      display: initial;
+    }
+  }
+
+  .fa-angle-up {
+    display: initial;
+  }
+  .fa-angle-down {
+    display: none;
+  }
+}
+
+.img-cover-wrap {
+  & img,
+  & picture{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.no-last-mb > :last-child {
+  margin-bottom: 0 !important;
+}
+
+.no-last-pb > :last-child {
+  padding-bottom: 0 !important;
+}
+
+.no-last-mpb > :last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.no-last-bb > :last-child {
+  border-bottom: none !important;
+}
+
+.text-wrap {
+  white-space: normal !important;
+}
+
+.text-nowrap {
+  white-space: nowrap !important;
+}
+
+.text-decoration-none {
+  text-decoration: none !important;
+}
+
+.text-decoration-underline {
+  text-decoration: underline !important;
+}
+
+.text-decoration-line-through {
+  text-decoration: line-through !important;
+}
+
+.text-break {
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+}
+
+.btn-clear {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  font-weight: inherit;
+
+  &:focus {
+    outline: none;
+  }
+}

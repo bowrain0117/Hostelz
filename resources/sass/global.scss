@@ -1,0 +1,973 @@
+@import "variables";
+
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+@import "bootstrap-sass/assets/stylesheets/bootstrap";
+
+@import "bootstrap/utilities";
+@import url("//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700");
+
+// Stuff that should be in Boostrap that isn't.
+
+/* Add a screen-xlg size */
+
+.container {
+    @media (min-width: $screen-xlg-min) {
+        width: $container-xlg;
+    }
+}
+
+a.showVisitedColor:visited {
+    color: darken(desaturate($link-color, 5%), 12%);
+}
+
+// Add a xxs screen size (extra extra small, such as iPhone 5 in portrait mode)
+
+@media (max-width: $screen-xxs-min) {
+  @include make-grid(xxs);
+}
+
+@media (max-width: $screen-xxs-min) {
+    .hidden-xxs {
+        display: none !important;
+    }
+}
+
+
+// input-xs
+
+.input-xs {
+    height: 22px;
+    padding: 3px 5px;
+    font-size: 12px;
+}
+
+.input-group-xs > .form-control,
+.input-group-xs > .input-group-addon,
+.input-group-xs > .input-group-btn > .btn {
+  @extend .input-xs;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.underlineLinks a {
+    text-decoration: underline;
+}
+
+.disableHoverUnderline:hover {
+    text-decoration: none;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.alert, .well {
+    break-inside: avoid-column;
+
+    h1:first-child, h2:first-child, h3:first-child {
+        margin-top: 0;
+    }
+}
+
+.panel {
+    break-inside: avoid-column;
+}
+
+
+/* Misc */
+
+body, html {
+    height: 100%; /* for sticky footer */
+    -ms-overflow-style: scrollbar; /* keeps the IE scroll bar from overlapping content on the right side of the screen */
+    overflow-x: hidden;
+}
+
+html#backend {
+    overflow-x: initial;
+}
+
+h1, h2, h3 {
+    margin-top: 0.67em;
+    margin-bottom: 0.67em; /* more than the bootstrap default is */
+}
+
+// ** Our project's global CSS below **
+
+// This gets rid of a Bootstrap feature where links have the URL added after the link when printing.
+
+@media print {
+  a[href]:after {
+    content: none;
+  }
+}
+
+// This overrides a bootsrap feature that causes the background to be non-scrollable when a dialog box opens.  The reason we override it is that it has an annoying side-effect of shifting the content of the page when a dialog opens.  So we disable the feature.
+.modal-open {
+    overflow: auto;
+}
+
+
+// Background Colors
+
+.background-primary-xlt {
+    background-color: $primary-xlt-bg;
+}
+
+// (Note: Currently only used for some admin stuff (mail-display, etc.)
+.background-primary-lt {
+    background-color: $primary-lt-bg;
+}
+
+.background-primary-md {
+    background-color: $primary-md-bg;
+}
+
+
+// Misc
+
+.featurePill {
+    background: darken($panel-primary-heading-bg, 8%);
+    text-align: right;
+    color: #fff;
+    border-radius: 999rem 0 0 999rem;
+    font-size: 12px;
+    padding: 1rem 1rem 1rem 2rem;
+    float: right;
+    margin: -7px 0 0 6px;
+    filter: drop-shadow(1px 2px 4px rgba(0,0,0,.2));
+}
+
+.wordCount {
+    color: $gray-light;
+    font-size: 11px;
+}
+
+.photoFrame {
+    padding: 5px;
+    border: 1px solid #e3e3e3;
+    background: #f5f5f5;
+    display: inline-block;
+}
+
+.photoFrameSmall {
+    padding: 3px;
+    border: 1px solid #e3e3e3;
+    background: #f5f5f5;
+    display: inline-block;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+.fancyRadioButtons {
+
+    input {
+        /* This is all just to make it hide the standard radio button circles so we can use our own */
+        position: absolute;
+        clip: rect(0, 0, 0, 0);
+        pointer-events: none;
+    }
+
+    /* Show/Hide the Circle */
+
+    label.active .fa-circle {
+        display: inline-block;
+    }
+    label.active .fa-circle-o {
+        display: none;
+    }
+    label:not(.active) .fa-circle {
+        display: none;
+    }
+    label:not(.active) .fa-circle-o {
+        display: inline-block;
+    }
+}
+
+// ** Dropdown Menus **
+
+// Small dropdown menu
+
+.ourDropdownMenus {
+    .dropdown-toggle .caret {
+        margin-left: 4px;
+    }
+
+    .dropdown-menu {
+        font-size: 12px;
+
+        > li > a  {
+            padding: 3px 20px 3px 10px;
+
+            .fa { /* checkmarks */
+                margin-right: 7px;
+                font-size: 10px;
+                color: #fff; /* color gets changed when selected by .menuOptionSelected */
+            }
+
+            &:hover .fa {
+                color: #ccc;
+            }
+        }
+        }
+
+    .menuOptionSelected .fa {
+        color: hsl($primary-hue, 70, 30) !important;
+    }
+}
+
+
+/* Usage: <div class="bigWaitingSpinner"><i class="fa fa-cog fa-spin"></i></div> */
+
+.bigWaitingSpinner {
+    font-size: 100px;
+    color: #ddd;
+    margin: 20px auto 20px auto;
+    width: 100%;
+    text-align: center;
+    animation: fadein 3s;
+}
+
+/** ContentBox **/
+
+@mixin closeContentBox() {
+    .contentBoxTitle {
+        /* it's important that these are at least as specific as the default defined
+         under "&.fa-caret-right" below so that this can take precedence under CSS specificity precedence rules
+        (they are able to take precedence bacause they are equally specific, but defined later) */
+
+        i.fa.fa-caret-right {
+            display: inline-block;
+        }
+        i.fa.fa-caret-down {
+            display: none;
+        }
+    }
+
+    .contentBoxContent {
+        display: none;
+    }
+}
+
+.contentBox {
+
+    margin: 0 0 12px 0;
+
+    .contentBoxTitle {
+        font-size: 15px;
+        font-weight: 400;
+        padding: 8px 12px;
+        margin: 0 0 14px 0;
+        background-color: hsl($primary-hue, 30, 60); /* was #726dc5 */
+        /* background: linear-gradient(to bottom, $brand-primary, desaturate(darken($brand-primary, 2%), 10%)); */
+        /* also try light color: linear-gradient(to bottom, #E3E3F0, #D9D9EC) */
+        color: white;
+        border-radius: 2px;
+
+        a {
+            display: inline-block;
+            width: 100%; /* to make the whole bar clickable */
+            color: #fff; /* hsl($primary-hue, 100, 99); */
+        }
+
+        /*
+        See note in @mixin closeContentBox() above about not making these any more specific than the mixin's CSS selectors.
+        */
+
+        i.fa {
+            float: right;
+            padding-left: 4px;
+
+            &.fa-caret-right {
+                // Right caret is hidden by default, unless displayed by one of our "contentBoxClosed-" classes below.
+                display: none;
+
+                &:nth-last-of-type(1) {
+                    color: hsl($primary-hue, 70, 75);
+                }
+                &:nth-last-of-type(2) {
+                    color: hsl($primary-hue, 70, 86);
+                }
+            }
+            &.fa-caret-down {
+                // Down caret is shown by default, unless hidden by one of our "contentBoxClosed-" classes below.
+                display: inline-block;
+            }
+        }
+    }
+
+    .contentBoxContent {
+        font-size: 14px;
+        line-height: 140%;
+        padding: 0 12px 20px 12px;
+    }
+
+    /* contentBox show/hide depending on screen size */
+
+    // (closed regardless of screen size)
+    &.contentBoxClosed {
+        @include closeContentBox();
+    }
+
+    &.contentBoxClosed-xxs {
+        @media (max-width: $screen-xxs-min) {
+            @include closeContentBox();
+        }
+    }
+    &.contentBoxClosed-xs {
+        @media (max-width: $screen-xs-max) {
+            @include closeContentBox();
+        }
+    }
+    &.contentBoxClosed-sm {
+        @media (max-width: $screen-sm-max) {
+            @include closeContentBox();
+        }
+    }
+    &.contentBoxClosed-md {
+        @media (max-width: $screen-md-max) {
+            @include closeContentBox();
+        }
+    }
+}
+
+
+// Header
+
+$headerBackground: $primary-xlt-bg; /* $panel-default-heading-bg */
+$headerBorder: $primary-xlt-border;
+$headerLogoHeight: 40px;
+$headerLogoHeightXS: 32px;
+$headerTotalHeight: 60px;
+$headerTotalHeightXS: 42px;
+
+.header {
+
+    background-color: $headerBackground;
+    border-color: $headerBorder;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+
+    @media (max-width: $screen-xs-max) {
+        padding: 8px 0 4px 0;
+    }
+
+    #headerLogo {
+        display: inline-block;
+        float: left;
+        margin: ($headerTotalHeight - $headerLogoHeight)/2 8px ($headerTotalHeight - $headerLogoHeight)/2 0;
+
+        @media (max-width: $screen-xs-max) {
+            margin: ($headerTotalHeightXS - $headerLogoHeightXS)/2 8px ($headerTotalHeightXS - $headerLogoHeightXS)/2 0;
+        }
+
+        img {
+            height: $headerLogoHeight;
+
+            @media (max-width: $screen-xs-max) {
+                height: $headerLogoHeightXS;
+            }
+        }
+    }
+
+    .container {
+
+        > div {
+            display: inline-block;
+            float: right;
+            border-right: solid 1px $headerBorder;
+            vertical-align: middle;
+            margin: 0 0;
+            padding: ($headerTotalHeight - $input-height-small)/2 11px;
+            text-align: right;
+            font-size: 12px;
+
+            @media (max-width: $screen-xs-max) {
+                padding: 0 0;
+                margin: ($headerTotalHeightXS - $input-height-small)/2 0 ($headerTotalHeightXS - $input-height-small)/2 12px;
+                border-right: 0;
+            }
+        }
+
+        .headerMoto {
+            font-style: italic;
+            color: $gray;
+            padding: 11px 11px;
+        }
+
+        .headerSearch {
+            margin-left: 0;
+
+            @media (min-width: $screen-xs-min) {
+                .input-group-btn {
+                    width: auto;
+                }
+
+                input {
+                    width: 12em;
+                }
+            }
+
+            @media (min-width: $screen-sm-min) {
+                input {
+                    width: 18em;
+                }
+            }
+        }
+
+    }
+
+    #loggedIn, #loggedOut {
+        display: none; /* invisible until one is displayed by JS */
+
+        a {
+            vertical-align: middle;
+        }
+    }
+}
+
+
+// Footer
+
+$footerMargin: 50px;
+$footerHeight: 120px;
+
+/* Wrapper for page content to push down for sticky footer */
+#wrap {
+	min-height: 100%;
+    /* Negative indent footer by it's height */
+	margin: 0 auto (- ($footerHeight + $footerMargin));
+}
+#push {
+    height: $footerHeight + $footerMargin;
+}
+
+.footer {
+    margin-top: $footerMargin;
+    height: $footerHeight;
+    background-color: $headerBackground;
+    border-color: $headerBorder;
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    padding: 14px 0 8px 0;
+    clear: both;
+
+    .footerLinks {
+        font: 12px helvetica,arial,clean,sans-serif;
+        float: left;
+
+        /* Mobile */
+
+        a {
+            display: inline-block;
+            margin: 3px 15px 0 0;
+            color: darken($headerBackground, 34%);
+
+            @media (max-width: $screen-xs-max) {
+                display: block;
+            }
+        }
+    }
+
+    .copyright {
+        text-align: right;
+        margin-top: 30px;
+        float: right;
+        font-size: 11px;
+        line-height: 170%;
+        color: lighten(#000, 60%);
+
+        img {
+            vertical-align: top;
+            margin: 2px 0 0 1px;
+        }
+    }
+}
+
+div.fb-like {
+    float: right;
+    padding: 0 0 5px 0;
+}
+
+
+// Breadcrumbs
+
+div.breadcrumbs {
+    @extend .container;
+    font-size: 12px;
+    margin-top: 8px;
+    margin-bottom: 14px;
+    padding: 0 0;
+
+    ol {
+        margin: 0;
+        padding: 0 15px;
+
+        // We were having an issue with the default breadcrumb separator displaying as \00a0.  This is a temp fix until we can figure out what was going on.
+        // See https://github.com/twbs/bootstrap-sass/pull/911
+        // https://github.com/twbs/bootstrap/issues/16576
+        // https://github.com/sass/sass/issues/659
+        // http://stackoverflow.com/questions/21608762/sass-variable-interpolation-with-backslash-in-output
+        // http://stackoverflow.com/questions/21641833/how-to-use-a-single-backslash-in-string-interpolation-in-sass/21644971#21644971
+        // https://github.com/sass/libsass/issues/1115
+        // https://github.com/twbs/bootstrap-sass/issues/919
+        > li +li:before {
+            content: "/\00a0";
+        }
+    }
+}
+
+
+
+// menuOptionsPanel
+
+.menuOptionsPanel {
+    background-color: transparent;
+    border-width: 0;
+    box-shadow: none;
+    padding-left: 2px;
+    break-inside: avoid-column;
+    // We use padding-bottom instead of margin-bottom so it doesn't end up with the margin at the top of a column (break-inside applies to padding not margins).
+    margin-bottom: 0;
+    padding-bottom: 20px;
+
+    .panel-heading {
+        padding: 5px 0;
+        margin-bottom: 5px;
+        font-size: 18px;
+        font-weight: 700;
+        background-color: transparent;
+        color: #545454;
+        border-color: #dedede;
+    }
+
+    .panel-body {
+        padding: 5px 0;
+        color: #545454;
+    }
+
+    .panel-footer {
+        padding: 12px 0 5px 0;
+        background-color: transparent;
+        color: #545454;
+    }
+
+    .list-group-item {
+        padding: 3px 0;
+        font-size: 14px;
+        border-width: 0 !important;
+
+        i.fa, span.glyphicon {
+            width: 16px;
+            margin-right: 6px;
+            display: inline-block;
+            text-align: center;
+        }
+    }
+}
+
+
+// Misc Utility
+
+.noPaddingRight {
+    padding-right: 0;
+}
+
+@media (min-width: $screen-sm-min)
+{
+    .twoColumns {
+        /* autoprefixer: off */
+        column-count: 2;
+        -webkit-column-count: 2;
+        /* -moz-column-count: 2; (not using because mozilla doesn't avoid page breaks properly */
+        column-fill: balance;
+    }
+}
+
+// threeColumns actually uses 2 columns if between screen-sm-min and screen-md-max
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-md-max)
+{
+    .threeColumns {
+        /* autoprefixer: off */
+        column-count: 2;
+        -webkit-column-count: 2;
+        /* -moz-column-count: 2; (not using because mozilla doesn't avoid page breaks properly */
+        column-fill: balance;
+    }
+}
+
+@media (min-width: $screen-md-min)
+{
+    .threeColumns {
+        /* autoprefixer: off */
+        column-count: 3;
+        /* -moz-column-count: 3; (not using because mozilla doesn't avoid page breaks properly */
+        -webkit-column-count: 3;
+        column-fill: balance;
+    }
+}
+
+
+.noColumnBreak {
+    break-inside: avoid-column;
+}
+
+// navLinksBox
+
+.navLinksBox {
+    margin-top: 24px;
+    background-color: desaturate($panel-primary-heading-bg, 10%);
+    border-radius: 4px;
+}
+
+.navLinksBox a {
+    color: white;
+}
+
+.navLinksBox li.disabled a {
+    color: lighten($panel-primary-heading-bg, 42%);
+}
+
+.navLinksBox .nav>li>a:hover, .nav>li>a:focus {
+    background-color: lighten($panel-primary-heading-bg, 5%);
+}
+
+
+// Form handler Form
+
+.formHandlerForm button.submit {
+    margin-top: 14px;
+}
+
+.resetFormLink {
+    margin-top: 35px;
+}
+
+.formHandlerLabel {
+    margin-top: 10px;
+    margin-bottom: 6px;
+    font-size: 15px;
+}
+
+.formHandlerForm .indentElement {
+    margin-left: 10px;
+}
+
+// Search Tabs
+
+.formHandlerForm ul.formTabs .active  {
+    font-weight: 700;
+}
+
+.formTabContents {
+    border-bottom: 1px solid #ddd;
+    padding: 0 6px;
+    margin: 12px 0 16px 0;
+    clear: both;
+    width: 100%;
+}
+
+// Form handler Form Checkboxes
+
+.formHandlerForm div.checkboxes {
+    margin: 0 6px 8px 8px;
+}
+
+.formHandlerForm div.checkboxes .checkbox {
+    display: inline-block;
+    margin: 0 14px 0 0;
+    /* min-width: 200px; */
+    white-space: nowrap;
+}
+
+.formHandlerForm div.radio {
+    margin: 0 6px 8px 8px;
+    // clear: both;
+
+    div { // each radio button
+        display: inline-block;
+        margin: 0 16px 0 0;
+        // min-width: 170px;
+        white-space: nowrap;
+    }
+}
+
+.formHandlerForm div.checkboxes div.searchAll {
+    display: block;
+}
+
+.formHandlerForm div.checkboxes .checkbox label {
+    font-size: 12px;
+}
+
+table.fhMulti {
+    margin-bottom: 6px;
+}
+
+table.fhMulti td {
+    padding-top: 2px;
+}
+
+tr.fhMulti_template {
+    display: none;
+}
+
+.fhMulti_add {
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+
+// Form handler List
+
+.formHandlerList td {
+    font-size: 13px;
+    padding: 0 !important;
+    margin: 0;
+}
+
+.formHandlerList td a {
+    // bigger click-able area
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 8px 8px;
+}
+
+.formHandlerList a:hover {
+    text-decoration: none; // no underline, entire row is clickable
+}
+
+.formHandlerList td .form-control-static {
+    padding: 8px 8px;
+}
+
+.formHandlerList td div.text-danger { // editableList error messages
+    padding: 0 8px;
+}
+
+.formHandlerList .form-group {
+    // align with other form list items
+    display: inline-block;
+    margin: 8px 8px;
+}
+
+// Form Handler editableList
+
+.editableListControlAll td {
+    background-color: #eee !important;
+}
+
+
+// Pagination
+
+.pagination {
+    font-size: 12px;
+    margin: 0 0 20px 0;
+}
+
+
+// File Upload
+
+#uploadBox #filelist div {
+    border-radius: 5px;
+    padding: 3px 7px;
+    margin: 2px 0;
+    background-color: #f5f9ff;
+    width: 500px;
+}
+
+
+// File List
+
+.fileList {
+    font-size: 13px;
+}
+
+.fileList .edit-in-progress + .fileListEditableIcon {
+    display: none;
+}
+
+// File List Photo Mode
+
+.fileList .thumbnail {
+    display: inline-block;
+    min-width: 120px;
+}
+
+.fileList .thumbnail img {
+    max-height: 120px;
+}
+
+.fileList .thumbnail .btn {
+}
+
+// Auto-complete
+
+.autocomplete-suggestions { border: 1px solid #CCC; background: #FFF; overflow: auto; border-radius: 3px; padding: 4px 6px; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; color: #44B; font-size: 13px; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #004; }
+
+// * Map *
+
+.mainMap {
+    .mapHeader {
+        text-align: right;
+
+        a {
+            display: inline-block;
+            color: hsl($primary-hue, 30, 70);
+
+            // (a bigger target for small touchscreens)
+            padding: 7px 8px;
+            font-size: 17px;
+
+            @media (min-width: $screen-sm-min) {
+                padding: 4px 5px;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+#mapCanvas {
+    width: 100%;
+    margin-bottom: 26px;
+
+    // Small (iPhone Portrait)
+
+    &.mapSmall { height: 220px; }
+    &.mapBig { height: 400px; }
+
+    // Tiny (iPhone Landscape)
+
+    @media (max-height: 400px) {
+        &.mapSmall { height: 140px; }
+        &.mapBig { height: 220px; }
+    }
+
+    // Bigger Screens
+
+    @media (min-height: 740px) {
+        &.mapSmall { height: 300px; }
+        &.mapBig { height: 600px; }
+    }
+}
+
+
+/* Speech Bubble */
+
+.speechBubbleAuthor {
+    margin: 0 0 16px 0; // small screen (arrow on the bottom)
+    text-align: right;
+    font-size: 12px;
+
+    .bubbleName {
+        color: #000;
+        font-size: 14px
+    }
+
+    .bubbleDate {
+        color: $gray-light;
+        display: block; // block, even on small screens
+    }
+
+    img {
+        margin-top: 4px;
+        border-radius: 50%;
+        display: none; // not displayed on small screens
+    }
+
+    div {
+        // Small screen size
+        display: inline-block;
+        margin-left: 8px;
+    }
+
+    @media (min-width: $screen-sm-min) // Larger screen sizes (bubble on the left side)
+    {
+        margin: 8px 0 16px 0;
+
+        div {
+            display: block;
+            margin-left: 0;
+        }
+
+        img {
+            display: inline-block;
+        }
+    }
+}
+
+.speechBubble
+{
+    position: relative;
+    padding: 16px 25px;
+    background: $primary-lt-bg;
+    border-radius: 8px;
+    color: $primary-dk-text;
+    line-height: 160%;
+
+    // Small screen size (bubble arrow on the bottom)
+    margin: 0 0 15px 0;
+
+    @media (min-width: $screen-sm-min) {
+        // Larger screen sizes (bubble on the left side)
+        margin: 0 0 19px 0;
+    }
+
+    .bubbleSummary {
+        display: inline;
+        font-weight: 700;
+        margin-right: 8px;
+    }
+
+    // For the speech bubble arrow thing
+    &:after {
+        content: '';
+        position: absolute;
+        border-style: solid;
+        display: block;
+        width: 0;
+        z-index: 1;
+
+        // Small screen size (bubble arrow on the bottom)
+        border-width: 12px 12px 0;
+        border-color: $primary-lt-bg transparent;
+        bottom: -12px;
+        right: 24px;
+
+        @media (min-width: $screen-sm-min) {
+            // Larger screen sizes (bubble on the left side)
+            border-width: 12px 12px 12px 0;
+            border-color: transparent $primary-lt-bg;
+            top: 16px;
+            bottom: auto;
+            right: auto;
+            left: -12px;
+        }
+    }
+}
+
+.bg-row-danger {
+    background: #FF5852;
+    color: #fff;
+    padding: 5px;
+}
+
+.bg-row-success {
+    background: #31D0AA;
+    color: #fff;
+    padding: 5px;
+}

@@ -1,0 +1,437 @@
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "variables";
+
+
+h1 {
+    font-weight: 700;
+    margin: 0 0 0 0;
+    line-height: 100%;
+    color: #666666;
+    padding-bottom: 12px;
+    border-bottom: 1px solid $gray-light2;
+    padding-top: 24px;
+    font-size: 40px;
+    @media (max-width: $screen-sm-min) {
+        padding-top: 12px;
+        font-size: 20px;
+    }
+}
+
+.container:before {
+    content: '';
+}
+
+.addressCityLink {
+    display: none; /* is displayed by the javascript only if there are no previous/next buttons on the page */
+    
+    a {
+        text-decoration: underline;
+    }
+}
+
+/* Top of the page links */
+
+.listingTopButtons {
+    float: right;
+    text-align: right; /* mostly just affects layout small screens */
+    
+    > a, > button, > ul {
+        margin: 0 0 16px 8px;
+        vertical-align: middle;
+    }
+}
+
+#previousAndNextListings {
+    display: none; // will be made visible in javascript if using for this page
+}
+
+#editListing {
+    display: none; /* Hide by default, displayed by javascript if editable */
+}
+
+/* SideBar */
+
+.sideBar {
+    
+    margin-top: 10px;
+    
+    .text-success {
+        color: $brand-success;
+    }
+    .text-danger {
+        color: $brand-danger;
+    }
+    
+    .contentBoxContent a {
+        text-decoration: underline;
+    }
+    
+    .listingAccolades {
+        font-style: italic;
+        font-size: 15px;
+        margin-bottom: 10px;
+        
+        i {
+            margin-right: 2px;
+        }
+    }
+    
+    .addressCityLink {
+        font-weight: 700;
+    }
+    
+    @media (min-width: $screen-md-min)
+    {
+        /* Special modified version of .contentBox for the sideBar */
+        
+        .contentBox {
+        
+            h2.contentBoxTitle {
+                font-size: 14px;
+                padding: 6px 10px;
+                margin: 0 0 12px 0;
+            }
+            
+            .contentBoxContent {
+                font-size: 13px;
+                padding: 0 10px 20px 10px;
+            }
+            
+            h3 {
+                font-size: 14px;
+                font-weight: 700;
+                margin: 20px 0 10px 0;
+                padding: 0 0 8px 0;
+                border-bottom: 1px solid $gray-light2; 
+                
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+        
+    /* Features */
+    
+    .features {
+        i.fa {
+            margin: 0 2px 4px 0;
+            width: 1em;
+        }
+        
+        .labelValuePairLabel {
+            display: inline-block;
+            margin: 0 3px 4px 0;
+        }
+        .labelValuePairValue {
+            font-weight: 700;
+        }
+        
+        hr {
+            margin: 6px 0 6px 0;
+            border-color: #fff; /* it's invisible, but just provides some extra space */
+        }
+    }
+
+}
+
+// * Review *
+
+.reviewAuthor {
+    font-size: 12px;
+    line-height: 140%;
+    
+    > div {
+        padding: 14px 0 18px 0;
+        font-style: italic;
+    }
+    img {
+        float: left;
+        margin: 14px 16px 4px 0;
+        border-radius: 50%;
+    }
+    div.reviewDate {
+        font-style: italic;
+        font-size: 11px;
+        color: $gray-light; 
+    }
+}
+
+.reviewPicTitle {
+    background-color: #777;
+    padding: 6px 8px 6px 8px;
+    font-size: 13px;
+    color: #eee;
+    text-align: center;
+    margin: 12px 1px 4px 0;
+}
+
+
+// * Pics *
+
+.picRow {
+    
+    .additionalPicsOverlay {
+        color: #fff;
+        font-size: 36px;
+        position: absolute;
+        left: 2px;
+        right: 2px;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        > div {
+            display: table;
+            height: 100%;
+            width: 100%;
+        
+            > div {
+                display: table-cell;
+                text-align: center;
+                vertical-align: middle;
+            }
+        }
+    }
+    
+    img {
+        width: 100%;
+        height: auto;
+    }
+    
+    > div {
+        margin-bottom: 4px;
+        position: relative; /* for the additionalPicsOverlay */
+    }
+    
+    @media (min-width: 700px) { /* this size must match the media query in the header of _listingDisplay.blade.php and the $(window).width() comparison in js/listingDisplay.blade.php. */
+        overflow: hidden;
+        margin: 0 -2px;
+        
+        > div {
+            display: inline-block;
+            float: left;
+            overflow: hidden;
+            padding: 0 2px;  
+            
+            img:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+/* Panoramas */
+
+.listingPanorama {
+    width: 100%;
+    margin-bottom: 12px;
+    height: 200px !important; /* for small devices */
+    
+    @media (min-width: $screen-md-min) {
+        height: 400px !important;
+    }
+}
+
+table#importedRatingScores {
+    width: 100%;
+    
+    th, td {
+        width: 10%;
+        padding: 4px 8px 6px 8px;
+    }
+    
+    th {
+        font-size: 14px;
+        color: #222;
+    }
+    
+    td {
+        width: 10%;
+        padding: 4px 8px 6px 8px;
+        color: $gray;
+        font-size: 11px;
+    }
+    
+    td.systemName {
+        text-align: right;
+        color: $gray-darker;
+        font-size: 12px;
+        
+        .ratingCount {
+            font-size: 10px;
+            color: $gray-light;
+            line-height: 100%;
+        }
+    }
+    
+    tr.scoreAverage td.systemName {
+        font-size: 14px;
+        color: #000;
+    }
+    
+    tr.scoreAverage td {
+        font-weight: 700;
+        font-size: 12px;
+        color: #000;
+    }
+    
+    td.noScore {
+        vertical-align: middle;
+        color: $gray-light;
+    }
+}
+
+.scoreBar {
+    background-color: #f1f1f1;
+    height: 3px;
+    
+    div {
+        height: 100%;
+    }
+}
+
+/* Combined Rating */
+
+.combinedRatingCircle {
+    position: relative;
+    overflow: hidden;
+    height: 65px;
+    width: 65px;
+    margin: 0 16px 0 0;
+    float: left;
+    
+    img {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+    
+    div {
+        position: absolute;
+        z-index: 2;
+        top: 24px;
+        text-align: center;
+        width: 100%;
+        font-size: 26px;
+        font-weight: 700;
+        color: #fff;
+        font-family: "Times New Roman", Times, serif;
+    }
+}
+
+.combinedRatingKey {
+    font-size: 11px;
+    margin: 1px;
+    float: left;
+    line-height: 140%;
+    color: #aaa;
+}
+
+.combinedRatingCount {
+    font-size: 12px;
+    margin-top: 5px;
+    
+    span {
+        font-weight: 700;
+    }
+}
+
+.combinedRatingDesc {
+    color: #999;
+    font-size: 12px;
+    line-height: 140%;
+    margin-top: 6px;
+}
+
+/* Booking */
+
+@media (min-width: $screen-md-min)
+{
+    .bookingSearchContentBox {
+        padding: 0 0 20px 0 !important;
+    }
+}
+
+/* Map */
+
+#mapCanvas {
+    width: 100%;
+    height: 400px;
+}
+
+#streetView {
+    width: 100%;
+    height: 400px;
+}
+
+.streetViewDiv {
+    display: none; /* displayed later by javascript */
+}
+
+/* Ratings */
+
+.ratingPics {
+    img {
+        height: 80px; /* should be the same as Rating::THUMBNAIL_HEIGHT */
+        margin: 8px 10px 0 0;
+        padding: 1px;
+        border: 1px solid $primary-md-border;
+    }
+}
+
+/* Submit Rating */
+
+// (based on https://css-tricks.com/star-ratings/)
+
+.submitRating {
+    .stars {
+        color: hsl(0, 0%, 70%);
+        unicode-bidi: bidi-override;
+        direction: rtl;
+        text-align: left;
+        
+        > i {
+            display: inline-block;
+            position: relative;
+            width: 1.4em;
+        }
+        > i:hover:before, > i:hover ~ i:before, .starSelected {
+            color: hsl($primary-hue, 80%, 70%);
+        }
+    }
+}
+
+/* Ad */
+
+.ad > div {
+    font-size: 11px;
+    line-height: 135%;
+    padding: 10px;
+    border: 1px solid $state-info-border;
+    margin: 20px 38px 18px 0;
+    display: table; /* to shrink-wrap the border */
+    
+    img {
+        display: block;
+        margin-bottom: 5px;
+        
+        @media (min-width: $screen-md-min)
+        {
+            width: 100%
+        }
+    }
+    
+    a {
+        color: $gray-dark;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+}

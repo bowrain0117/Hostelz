@@ -1,0 +1,269 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: #ccc;
+  background-color: black;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+img {
+  border: 0;
+  display: block;
+}
+
+#reconnect, #refresh {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  
+  display: -moz-box;
+  -moz-box-pack: center;
+  -moz-box-align: center;
+  
+  z-index: 25;
+}
+
+#reconnect.hidden, #refresh.hidden {
+  display: none;
+}
+
+#reconnect input, #refresh input {
+  padding: 1ex;
+  font-weight: bold;
+  font-size: x-large;
+  display: block;
+}
+
+#terminal_wrapper {
+  text-rendering: optimizeLegibility;
+  background-color: rgba(0, 0, 0, 0.90);
+  position: absolute;
+  z-index: 5;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+#terminal_calc {
+  position: absolute;
+  z-index: -5;
+}
+
+#terminal_wrapper > div {
+  padding-right: 34px;
+  height: 100%;
+}
+
+#terminal {
+  height: 100%;
+  padding: 2px;
+  margin: 0;
+}
+
+#terminal > div {
+  display: inline-block;
+}
+
+#terminal div span, #terminal_calc span {
+ padding: 0; 
+}
+
+#term_pref {
+  
+}
+
+#icons {
+  position: absolute;
+  z-index: 15;
+  right: 0;
+  top: 0;
+  border-left: 2px solid #666;
+  height: 100%;
+  width: 32px;
+  padding: 4px 0;
+  background-color: rgba(0, 0, 0, 0.90);
+}
+
+#icons div.n {
+  position: absolute;
+  text-align: center;
+  width: 32px;
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 80%;
+  cursor: pointer;
+}
+
+#icons img {
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+#icons img.selected {
+  border: 1px solid #dc0000;
+}
+
+#icons div {
+  margin-bottom: 10px;
+}
+
+#close_icon {
+  position: absolute;
+  bottom: 2px;
+  width: 32px;
+}
+
+#input_wrapper {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+}
+
+#input_wrapper > div {
+  height: 100%;
+  padding-right: 34px;
+}
+
+#term_input {
+  background: transparent;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: 0;
+  margin: 0;
+  cursor: default;
+  resize: none;
+}
+
+#input_wrapper.selected {
+  z-index: 1;
+}
+
+#term_input:focus {
+  outline: invert none medium;
+}
+
+@keyframes myfirst {
+  from {background: red;}
+  to {background: black;}
+}
+  
+@-moz-keyframes myfirst {
+  from {background: red;}
+  to {background: black;}
+}
+  
+@-webkit-keyframes myfirst {
+  from {background: red;}
+  to {background: black;}
+}
+
+#cursor.outline {
+  border: 1px solid rgba(200, 200, 200, 0.4);
+  background-color: transparent;
+}
+
+#cursor {
+  background-color: rgba(200, 200, 200, 0.4);
+  position: absolute;
+  z-index: 7;
+  padding-bottom: 0;
+}
+
+span.b {
+  text-stroke-width: 1.1px;
+  -webkit-text-stroke-width: 1.1px;
+}
+
+span.i {
+  font-style: italic;
+}
+
+span.u {
+  text-decoration: underline;
+}
+
+span.s {
+  text-decoration: line-through;
+}
+
+span.r {
+  color: black;
+  background-color: #ccc;
+}
+
+span.fgblue {
+  color: #5555ff;
+}
+
+span.fgblack {
+  color: #666;
+}
+
+span.fgred {
+  color: #dc0000;
+}
+
+span.fggreen {
+  color: #45D364;
+}
+
+span.fgbrown {
+  color: orange;
+}
+
+span.fgmagenta {
+  color: magenta;
+}
+
+span.fgcyan {
+  color: #00aaaa;
+}
+
+span.fgwhite {
+  color: white;
+}
+
+span.bgblue {
+  background-color: #5555ff;
+}
+
+span.bgblack {
+  background-color: #666;
+}
+
+span.bgred {
+  background-color: #dc0000;
+}
+
+span.bggreen {
+  background-color: #45D364;
+}
+
+span.bgbrown {
+  background-color: orange;
+}
+
+span.bgmagenta {
+  background-color: magenta;
+}
+
+span.bgcyan {
+  background-color: #00aaaa;
+}
+
+span.bgwhite {
+  background-color: white;
+}
+

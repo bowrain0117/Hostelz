@@ -1,0 +1,146 @@
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "variables";
+
+h1 {
+    font-weight: normal;
+    font-size: 40px;
+    padding: 10px 0 0 0;
+    color: #666666;
+    margin: 14px 0 10px 0;
+    
+    span {
+        font-weight: 700;
+    }
+}
+
+.regionsList {
+    .list-group-item {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+}
+
+.accommodationType {
+    margin: 12px 0 8px 0;
+}
+
+.cityPic {
+    margin-bottom: 20px;
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    img {
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+    /*
+    .caption {
+        font-size: 11px;
+        margin-top: 7px;
+        text-align: center;
+        line-height: 145%;
+    } */
+}
+    
+.citiesList {
+    
+    column-fill: balance;
+    
+    // Medium screen
+    columns: 200px;
+
+    @media (max-width: $screen-xs-min) {
+        columns: auto auto;
+    }
+
+    a {
+        background-color: hsl($primary-hue, 20%, 97%);
+
+        break-inside: avoid;
+        
+        &:hover {
+            background-color: hsl($primary-hue, 30%, 95%);
+        }
+        
+        .itemBadge {
+            color: #fff;
+            background-color: hsl($primary-hue, 20%, 75%);
+        }
+    }
+}
+
+/* Item List */
+
+.itemList {
+    margin-top: 12px;
+    
+    a {
+        display: inline-block;
+        width: 100%;
+        border-radius: 5px;
+        padding: 5px 8px;
+        margin: 2px 0;
+
+        .itemBadge {
+            float: right;
+            margin-top: 2px;
+            display: inline-block;
+            min-width: 10px;
+            padding: 3px 7px;
+            font-size: 10px;
+            font-weight: bold;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 10px;
+        }
+    }
+}
+
+.sideBar {
+    
+    .description {
+        
+        a {
+            text-decoration: underline;
+        }
+    
+        .descriptionAuthor {
+            margin-bottom: 14px;
+            
+            div {
+                padding-top: 12px;
+                font-style: italic;
+            }
+            img {
+                float: left;
+                margin: 14px 16px 4px 0;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+/* Comments */
+
+.cityComments {    
+    > div {
+        padding: 10px 0 12px 46px;
+    	background-image: url(/images/openQuote.png);
+    	background-position: top left;
+    	background-repeat: no-repeat;
+        border: none;
+        line-height: 130%;
+    	font-size: 16px;
+    	font-style: italic;
+    	margin: 0 0 4px 0;
+    	
+    	a {
+    	    font-weight: 700;
+        }
+    }
+}

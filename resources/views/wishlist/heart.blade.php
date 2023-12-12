@@ -1,0 +1,1 @@
+<i class="wishlistHeart far fa-heart wishlistListing-{{ $listing->id }} cl-{{ $heartColor ?? 'light' }}" data-listing="{{ $listing->id }}" ></i>
